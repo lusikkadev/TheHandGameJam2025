@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 100698389}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransformFollow
   toFollow: {fileID: 1508832300}
-  offset: {x: 0, y: 5, z: 0}
+  offset: {x: 3, y: 5, z: 0}
 --- !u!1 &208982572
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,6 +953,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1114204393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2384006817302608323, guid: 852c9f97b5f063749840eedb383805e9, type: 3}
+  m_PrefabInstance: {fileID: 3420400732160101584}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1114204397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114204393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e49e2ae0a60123489f19c2a368e6f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashLight
+  energy: 0
+  maxEnergy: 20
+  isOn: 0
+  fogController: {fileID: 100698392}
 --- !u!1 &1192154392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,7 +1609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
   player: {fileID: 1508832299}
-  offset: {x: 3, y: 2}
+  offset: {x: 3, y: 3.8}
 --- !u!1 &2028023103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,8 +1801,8 @@ Transform:
   m_GameObject: {fileID: 2111502455}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 10, z: 1}
+  m_LocalPosition: {x: -0.0101, y: 3.8958, z: 0}
+  m_LocalScale: {x: 22.16099, y: 19.791069, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 100698390}
@@ -1924,10 +1945,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7134044226208400646, guid: 852c9f97b5f063749840eedb383805e9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2384006817302608323, guid: 852c9f97b5f063749840eedb383805e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1114204397}
   m_SourcePrefab: {fileID: 100100000, guid: 852c9f97b5f063749840eedb383805e9, type: 3}
 --- !u!4 &3420400732160101585 stripped
 Transform:
