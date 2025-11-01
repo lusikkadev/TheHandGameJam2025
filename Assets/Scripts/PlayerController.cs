@@ -60,6 +60,9 @@ public class PlayerController : MonoBehaviour
         float currentZ = rb.rotation;
         float correctedZ = Mathf.LerpAngle(currentZ, targetZ, 10f * Time.deltaTime);
         rb.MoveRotation(correctedZ);
+
+        if (movementInput.x != 0)
+            transform.localScale = new Vector2(movementInput.x, transform.localScale.y);
     }
 
     private void OnMove(InputValue value)

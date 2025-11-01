@@ -7,6 +7,6 @@ public class TransformFollow : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(toFollow.position.x + offset.x, 0f, 0f);
+        transform.position = toFollow.position + offset;
     }
 }
