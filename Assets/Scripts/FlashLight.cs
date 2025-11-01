@@ -3,15 +3,18 @@ using UnityEngine;
 public class FlashLight : MonoBehaviour
 {
     public float intensity = 1f;
-
+    public bool isOn = false;
 
     public void TurnOn()
     {
-        //gameObject.SetActive(true);
+        isOn = true;
+        gameObject.SetActive(true);
     }
 
     public void TurnOff()
     {
-        //gameObject.SetActive(false);
+        isOn = false;
+        gameObject.SetActive(false);
+
     }
 }
