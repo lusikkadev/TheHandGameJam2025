@@ -5,6 +5,10 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
     FlashLight flashLight;
+    Animator animator;
+    public AnimationClip runAnim;
+    public AnimationClip idleAnim;
+
 
     Vector2 movementInput;
     Vector2 smoothedMovementInput;
@@ -20,6 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         flashLight = GetComponentInChildren<FlashLight>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Start()
@@ -65,6 +70,8 @@ public class PlayerController : MonoBehaviour
     private void OnMove(InputValue value)
     {
         movementInput = value.Get<Vector2>();
+        animator.Play(movementInput.x != 0 ? runAnim.name : idleAnim.name);
+
     }
 
     void OnJump()
