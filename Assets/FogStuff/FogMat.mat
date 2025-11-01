@@ -57,7 +57,7 @@ Material:
     - _FadeDistance: 2.5
     - _Light2Pos: 0
     - _Light3Pos: 0
-    - _Rem: 0.5
+    - _Rem: -1
     m_Colors:
     - _Light0Pos: {r: 0, g: 20, b: 0, a: 0}
     - _Light1Pos: {r: 0, g: 20, b: 0, a: 0}

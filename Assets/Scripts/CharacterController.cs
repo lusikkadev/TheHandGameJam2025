@@ -33,11 +33,6 @@ public class CharacterController : MonoBehaviour
             rb.gravityScale += 0.2f * Time.deltaTime;
         }
 
-        float targetZ = 0f;
-        float currentZ = rb.rotation;
-        float correctedZ = Mathf.LerpAngle(currentZ, targetZ, 10f * Time.deltaTime);
-        rb.MoveRotation(correctedZ);
-
         if (Input.GetKeyDown(KeyCode.R))
         {
             RestartThisScene();
@@ -57,6 +52,11 @@ public class CharacterController : MonoBehaviour
     {
         smoothedMovementInput = Vector2.SmoothDamp(smoothedMovementInput, movementInput, ref movementInputSmoothVelocity, 0.1f);
         rb.linearVelocity = new Vector2(smoothedMovementInput.x * speed, rb.linearVelocity.y);
+
+        float targetZ = 0f;
+        float currentZ = rb.rotation;
+        float correctedZ = Mathf.LerpAngle(currentZ, targetZ, 10f * Time.deltaTime);
+        rb.MoveRotation(correctedZ);
     }
 
     private void OnMove(InputValue value)
