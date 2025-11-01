@@ -24,7 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseTexture:
-        m_Texture: {fileID: 2800000, guid: 3b273d843cefc2049b7699bf94633acf, type: 3}
+        m_Texture: {fileID: 2800000, guid: ae7dd4e4b6c3ce649a65dc312f102336, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -41,14 +41,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FadeDistance: 2.5
-<<<<<<< HEAD
+    - _FadeDistance: 1
     - _Light0FadeDist: 0
     - _Light0Rem: 0
-=======
-    - _Light2Pos: 0
-    - _Light3Pos: 0
->>>>>>> a7c429827d11e209d736575715a79c1df8cfd531
     - _Rem: -1
     m_Colors:
     - _Light0Pos: {r: 0, g: 20, b: 0, a: 0}
@@ -61,7 +56,7 @@ Material:
     - _Light7Pos: {r: 0, g: 20, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &8398654267196919469
+--- !u!114 &4270498509179609187
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
