@@ -52,14 +52,6 @@ public class PlayerController : MonoBehaviour
             RestartThisScene();
         }
 
-        if (Input.GetKeyDown(KeyCode.F) && !flashLight.isOn)
-        {
-            flashLight.TurnOn();
-        }
-        else if (Input.GetKeyDown(KeyCode.F) && flashLight.isOn)
-        {
-            flashLight.TurnOff();
-        }
     }
 
     private void FixedUpdate()
@@ -89,6 +81,18 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce);
             isGrounded = false;
+        }
+    }
+
+    void OnAttack()
+    {
+        if (flashLight.isOn)
+        {
+            flashLight.TurnOff();
+        }
+        else
+        {
+            flashLight.TurnOn();
         }
     }
 

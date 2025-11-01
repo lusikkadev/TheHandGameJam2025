@@ -48,10 +48,10 @@ public class TheHand : MonoBehaviour
 
    public void StopDescending()
     {
-        triggered = true;
+        triggered = false;
     }
     public void StartDescending()
     {
-        triggered = false;
+        triggered = true;
     }
 }
