@@ -42,8 +42,13 @@ Material:
     m_Ints: []
     m_Floats:
     - _FadeDistance: 2.5
+<<<<<<< HEAD
     - _Light0FadeDist: 0
     - _Light0Rem: 0
+=======
+    - _Light2Pos: 0
+    - _Light3Pos: 0
+>>>>>>> a7c429827d11e209d736575715a79c1df8cfd531
     - _Rem: -1
     m_Colors:
     - _Light0Pos: {r: 0, g: 20, b: 0, a: 0}
