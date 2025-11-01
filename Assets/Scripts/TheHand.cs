@@ -44,12 +44,14 @@ public class TheHand : MonoBehaviour
 
     }
 
-    //public void StopDescending()
-    //{
-    //    stopped = true;
-    //}
-    //public void ResumeDescending()
-    //{
-    //    stopped = false;
-    //}
+
+
+   public void StopDescending()
+    {
+        triggered = true;
+    }
+    public void StartDescending()
+    {
+        triggered = false;
+    }
 }
