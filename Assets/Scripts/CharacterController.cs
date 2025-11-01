@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class CharacterController : MonoBehaviour
 {
     Rigidbody2D rb;
+    FlashLight flashLight;
 
     Vector2 movementInput;
     Vector2 smoothedMovementInput;
@@ -16,6 +17,7 @@ public class CharacterController : MonoBehaviour
 
     private void Awake()
     {
+        flashLight = GetComponentInChildren<FlashLight>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -31,9 +33,23 @@ public class CharacterController : MonoBehaviour
             rb.gravityScale += 0.2f * Time.deltaTime;
         }
 
+        float targetZ = 0f;
+        float currentZ = rb.rotation;
+        float correctedZ = Mathf.LerpAngle(currentZ, targetZ, 10f * Time.deltaTime);
+        rb.MoveRotation(correctedZ);
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             RestartThisScene();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F) && !flashLight.isOn)
+        {
+            flashLight.TurnOn();
+        }
+        else if (Input.GetKeyDown(KeyCode.F) && flashLight.isOn)
+        {
+            flashLight.TurnOff();
         }
     }
 
