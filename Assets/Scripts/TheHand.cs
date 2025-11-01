@@ -7,8 +7,6 @@ public class TheHand : MonoBehaviour
     AnimationClip handGrab;
 
     public bool triggered = false;
-    public bool stopped = false;
-
 
     public float normalSpeed = 0.2f;
     public float speed = 0.2f;
@@ -29,12 +27,8 @@ public class TheHand : MonoBehaviour
         playerPos = player.transform.position;
         posX = player.transform.position.x;
 
-        if (stopped)
-        {
-            transform.position = new Vector2(posX, transform.position.y);
-        }
 
-        else if (triggered)
+        if (triggered)
         {
            
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(playerPos.x, playerPos.y + 1f), speed * Time.deltaTime);
@@ -50,12 +44,12 @@ public class TheHand : MonoBehaviour
 
     }
 
-    public void StopDescending()
-    {
-        stopped = true;
-    }
-    public void ResumeDescending()
-    {
-        stopped = false;
-    }
+    //public void StopDescending()
+    //{
+    //    stopped = true;
+    //}
+    //public void ResumeDescending()
+    //{
+    //    stopped = false;
+    //}
 }
