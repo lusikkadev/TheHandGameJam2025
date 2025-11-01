@@ -78,9 +78,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.8439232, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -115,7 +115,7 @@ Transform:
   m_GameObject: {fileID: 2426709645864246086}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.723, y: 0, z: 0}
+  m_LocalPosition: {x: 4.55, y: 0.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -157,6 +157,7 @@ Transform:
   - {fileID: 2403631824842347033}
   - {fileID: 7244859697829567387}
   - {fileID: 7667704265232663363}
+  - {fileID: 7022027767171283280}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1150349048354613729
@@ -346,8 +347,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.059049994, y: 0.8616, z: 0}
-    m_Extent: {x: 0.84035003, y: 1.5964, z: 0}
+    m_Center: {x: -0.4074, y: 2.35325, z: 0}
+    m_Extent: {x: 1.4706, y: 3.08775, z: 0}
   m_PointLightInnerAngle: 90.70496
   m_PointLightOuterAngle: 233.577
   m_PointLightInnerRadius: 0
@@ -358,10 +359,19 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0.5
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -0.39966866, y: 0.0071660145, z: 0}
+  - {x: -0.90577024, y: 0.6960306, z: 0}
   - {x: -0.035832644, y: -0.23566672, z: 0}
   - {x: 0.28500414, y: 0.023889076, z: 0}
-  - {x: -0.028661046, y: 1.9580233, z: 0}
+  - {x: 0.4784364, y: 0.2314973, z: 0}
+  - {x: 0.5627887, y: 1.0750028, z: 0}
+  - {x: 0.53467536, y: 2.382437, z: 0}
+  - {x: 0.5487381, y: 3.5633454, z: 0}
+  - {x: 0.29568976, y: 4.631786, z: 0}
+  - {x: -0.44940665, y: 4.9410734, z: 0}
+  - {x: -1.1242133, y: 4.2943883, z: 0}
+  - {x: -1.3642085, y: 3.1248777, z: 0}
+  - {x: -1.3772707, y: 2.2980921, z: 0}
+  - {x: -1.2366893, y: 1.2577685, z: 0}
 --- !u!114 &7134044226208400646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,3 +386,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlashLight
   intensity: 1
   isOn: 0
+--- !u!1 &7630652551217822616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7022027767171283280}
+  m_Layer: 0
+  m_Name: LightPos2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7022027767171283280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7630652551217822616}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.77, y: 0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3740565971035076431}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
