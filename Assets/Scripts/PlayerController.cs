@@ -1,3 +1,4 @@
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,6 +7,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     FlashLight flashLight;
     Animator animator;
+
     public AnimationClip runAnim;
     public AnimationClip idleAnim;
 
@@ -16,8 +18,10 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 2f;
     public float jumpForce = 125f;
+    public float gravityModifier = 0.2f;
     public bool isGrounded = true;
     bool notJumping = true;
+    bool facingRight = true;
 
 
     private void Awake()
@@ -25,6 +29,8 @@ public class PlayerController : MonoBehaviour
         flashLight = GetComponentInChildren<FlashLight>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        facingRight = transform.localScale.x >= 0;
     }
 
     void Start()
@@ -38,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
         if (!isGrounded)
         {
-            rb.gravityScale += 0.2f * Time.deltaTime;
+            rb.gravityScale += gravityModifier * Time.deltaTime;
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -60,6 +66,9 @@ public class PlayerController : MonoBehaviour
     {
         smoothedMovementInput = Vector2.SmoothDamp(smoothedMovementInput, movementInput, ref movementInputSmoothVelocity, 0.1f);
         rb.linearVelocity = new Vector2(smoothedMovementInput.x * speed, rb.linearVelocity.y);
+
+        if (smoothedMovementInput.x > 0.01f && !facingRight) Flip();
+        else if (smoothedMovementInput.x < -0.01f && facingRight) Flip();
 
         float targetZ = 0f;
         float currentZ = rb.rotation;
@@ -95,6 +104,15 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+    }
+
+
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 s = transform.localScale;
+        s.x *= -1f;
+        transform.localScale = s;
     }
 
 
