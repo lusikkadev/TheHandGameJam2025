@@ -9,16 +9,16 @@ public class ParallaxOptions : MonoBehaviour
     [HideInInspector]
     private Vector3 storedPosition;
 
-    [MenuItem("CameraControl/SavePosition")]
-    static void SaveCameraPositionMenu()
-    {
-        Camera.main.GetComponent<ParallaxOptions>().SaveCameraPosition();
-    }
-    [MenuItem("CameraControl/LoadPosition")]
-    static void LoadCameraPositionMenu()
-    {
-        Camera.main.GetComponent<ParallaxOptions>().LoadCameraPosition();
-    }
+    //[MenuItem("CameraControl/SavePosition")]
+    //static void SaveCameraPositionMenu()
+    //{
+    //    Camera.main.GetComponent<ParallaxOptions>().SaveCameraPosition();
+    //}
+    //[MenuItem("CameraControl/LoadPosition")]
+    //static void LoadCameraPositionMenu()
+    //{
+    //    Camera.main.GetComponent<ParallaxOptions>().LoadCameraPosition();
+    //}
 
     public void SaveCameraPosition()
     {
