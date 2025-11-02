@@ -805,6 +805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlashLight
   energy: 0
   maxEnergy: 10
+  minEnergy: 2
   isOn: 0
   fogController: {fileID: 0}
   batterySlider: {fileID: 0}
@@ -1224,6 +1225,7 @@ GameObject:
   - component: {fileID: 4878924108791456227}
   - component: {fileID: 7924869093474897289}
   - component: {fileID: 329074296925159489}
+  - component: {fileID: 1858433241981247298}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Player
@@ -1386,6 +1388,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1858433241981247298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3630737498137599463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c12b0af05e72d428c66d6f6496f936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  playerFlashlight: {fileID: 8384809463204630371}
 --- !u!1 &3686672369107258103
 GameObject:
   m_ObjectHideFlags: 0

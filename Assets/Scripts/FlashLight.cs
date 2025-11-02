@@ -19,6 +19,10 @@ public class FlashLight : MonoBehaviour
     private Renderer[] renderers;
     private ParticleSystem[] particleSystems;
 
+    [SerializeField] private float baseRegenSpeed = 0.5f;
+    [SerializeField] private float maxRegenSpeed = 2f;
+    private float currentRegenSpeed;
+
     TheHand theHand;
 
     private void Awake()
@@ -29,11 +33,22 @@ public class FlashLight : MonoBehaviour
         renderers = GetComponentsInChildren<Renderer>(true);
         particleSystems = GetComponentsInChildren<ParticleSystem>(true);
 
-
+        ChangeLightRegenSpeed(false);
         TurnOff();
     }
 
-
+    public void ChangeLightRegenSpeed(bool value) 
+    {
+        Debug.Log($"Regen Speed {value}");
+        if (value) 
+        {
+            currentRegenSpeed = maxRegenSpeed;
+        }
+        else 
+        {
+            currentRegenSpeed = baseRegenSpeed;
+        }
+    }
 
     private void Start()
     {
@@ -92,7 +107,7 @@ public class FlashLight : MonoBehaviour
         }
         else
         {
-            energy += 0.5f * Time.deltaTime;
+            energy += currentRegenSpeed * Time.deltaTime;
         }
 
         energy = Mathf.Clamp(energy, 0f, maxEnergy);
