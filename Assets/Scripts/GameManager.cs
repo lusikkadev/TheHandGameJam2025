@@ -2,13 +2,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private UiManager uiManager;
-    private void Awake()
-    {
-        uiManager = FindFirstObjectByType<UiManager>();
-    }
+
     public void GameOver()
     {
-        uiManager.OnGameOver();
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
+        Debug.Log("Game Over! Player has been caught.");
     }
 }
