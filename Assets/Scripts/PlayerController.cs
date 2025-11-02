@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce);
             isGrounded = false;
             notJumping = false;
-            audioManager.PlayJumpSound();
+            
         }
     }
 
@@ -166,7 +166,6 @@ public class PlayerController : MonoBehaviour
             isGrounded = true;
             rb.gravityScale = 1f;
             notJumping = true;
-            audioManager.PlayLandSound();
         }
         else
         {
