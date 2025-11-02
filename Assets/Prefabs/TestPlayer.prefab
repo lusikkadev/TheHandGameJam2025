@@ -809,6 +809,8 @@ MonoBehaviour:
   isOn: 0
   fogController: {fileID: 0}
   batterySlider: {fileID: 0}
+  baseRegenSpeed: 0.5
+  maxRegenSpeed: 2
 --- !u!1 &2426709645864246086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,6 +1296,7 @@ MonoBehaviour:
   jumpAnim: {fileID: 7400000, guid: dffdc821ecc6d5c4280821447e1a5339, type: 2}
   landAnim: {fileID: 7400000, guid: 9aa4af63f3826df4b952ebccc2b13d1b, type: 2}
   grabAnim: {fileID: 7400000, guid: b83e797245e737d4e95abbd350032d63, type: 2}
+  walkSound: {fileID: 8300000, guid: b73c9425e7c4d4046a3f7f956ede3199, type: 3}
   speed: 2
   jumpForce: 300
   gravityModifier: 0.4
