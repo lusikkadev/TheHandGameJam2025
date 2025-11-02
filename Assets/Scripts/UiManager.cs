@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
@@ -26,10 +27,10 @@ public class UiManager : MonoBehaviour
     }
     private void QuitGame() 
     {
-        Application.Quit();
+        SceneManager.LoadScene(1);
     }
     private void RestartGame() 
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0);
     }
 }
