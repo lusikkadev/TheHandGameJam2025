@@ -49,11 +49,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TheHand
   handAnim: {fileID: 0}
-  handGrab: {fileID: 7400000, guid: 78b6cb4a709439a4b9c40dc028953ba7, type: 2}
-  triggered: 0
+  grabAnim: {fileID: 7400000, guid: 78b6cb4a709439a4b9c40dc028953ba7, type: 2}
+  idleAnim: {fileID: 7400000, guid: 86b811ff69ae9ca4cb9792b3f5c29f4a, type: 2}
+  triggered: 1
+  grabbing: 0
   normalSpeed: 0.2
-  speed: 3
-  retreatSpeed: 3
+  speed: 0.2
+  retreatSpeed: 1
   player: {fileID: 0}
 --- !u!61 &1752125381687126251
 BoxCollider2D:
@@ -148,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 6879382312380587415}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.24, y: 1.232, z: 0}
+  m_LocalPosition: {x: -0.24, y: -0.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

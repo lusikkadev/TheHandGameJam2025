@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandFollow
   player: {fileID: 9144776980859106056}
-  maxAngle: 20
+  maxAngle: 45
   facingRight: 1
 --- !u!1 &2384006817302608323
 GameObject:
@@ -1296,6 +1296,7 @@ MonoBehaviour:
   jumpForce: 300
   gravityModifier: 0.4
   isGrounded: 1
+  grabbed: 0
 --- !u!114 &4878924108791456227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1813,7 +1814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandFollow
   player: {fileID: 9144776980859106056}
-  maxAngle: 20
+  maxAngle: 45
   facingRight: 1
 --- !u!1 &5832155219386496640
 GameObject:

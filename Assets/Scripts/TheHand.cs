@@ -34,18 +34,18 @@ public class TheHand : MonoBehaviour
     {
         var posX = transform.position.x;
         playerPos = player.transform.position;
-        //posX = player.transform.position.x;
-
+        
 
         if (triggered && !grabbing)
         {
-           
+            posX = player.transform.position.x;
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(playerPos.x, playerPos.y + 1f), speed * Time.deltaTime);
             transform.position = new Vector2(posX, transform.position.y);
 
         }
         else
         {
+            posX = transform.position.x;
             transform.position = Vector2.MoveTowards(transform.position, startPos, retreatSpeed * Time.deltaTime);
             transform.position = new Vector2(posX, transform.position.y);
         }

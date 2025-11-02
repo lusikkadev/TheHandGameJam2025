@@ -68,6 +68,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (grabbed)
+        {
+            animator.Play(grabAnim.name);
+            return; // Prevent other animations while grabbed
+        }
+
         smoothedMovementInput = Vector2.SmoothDamp(smoothedMovementInput, movementInput, ref movementInputSmoothVelocity, 0.1f);
         rb.linearVelocity = new Vector2(smoothedMovementInput.x * speed, rb.linearVelocity.y);
 
@@ -80,12 +86,6 @@ public class PlayerController : MonoBehaviour
         rb.MoveRotation(correctedZ);
 
         bool isInput = Mathf.Abs(movementInput.x) > 0.01f;
-
-        if (grabbed)
-        {
-            animator.Play(grabAnim.name);
-            return; // Prevent other animations while grabbed
-        }
 
         if (isLanding)
         {

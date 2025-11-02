@@ -17,8 +17,12 @@ public class FlashLight : MonoBehaviour
     private Renderer[] renderers;
     private ParticleSystem[] particleSystems;
 
+    TheHand theHand;
+
     private void Awake()
     {
+        theHand = FindFirstObjectByType<TheHand>();
+        batterySlider.maxValue = maxEnergy;
         lights = GetComponentsInChildren<Light2D>(true);
         renderers = GetComponentsInChildren<Renderer>(true);
         particleSystems = GetComponentsInChildren<ParticleSystem>(true);
@@ -31,12 +35,13 @@ public class FlashLight : MonoBehaviour
     {
         energy = maxEnergy;
 
-        //batterySlider.maxValue = maxEnergy;
-        //batterySlider.minValue = 0f;
+        batterySlider.maxValue = maxEnergy;
+        batterySlider.minValue = 0f;
     }
 
     public void TurnOn()
     {
+        theHand.StopDescending();
         isOn = true;
         SetVisualsActive(true);
 
@@ -45,6 +50,7 @@ public class FlashLight : MonoBehaviour
 
     public void TurnOff()
     {
+        theHand.StartDescending();
         isOn = false;
         SetVisualsActive(false);
 
@@ -82,6 +88,6 @@ public class FlashLight : MonoBehaviour
         }
 
         energy = Mathf.Clamp(energy, 0f, maxEnergy);
-        //batterySlider.value = energy;
+        batterySlider.value = energy;
     }
 }
