@@ -3,21 +3,24 @@ using UnityEngine;
 public class HandFollow : MonoBehaviour
 {
     public Transform player;
-    public float maxDistance = 2f;
+    public float maxAngle = 20f; // Maximum angle in either direction from default
 
     void Update()
     {
-
+        // Get mouse position in world space
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f;
 
-        Vector3 direction = mousePosition - player.position;
-        float distance = Mathf.Min(direction.magnitude, maxDistance);
-        Vector3 targetPosition = player.position + direction.normalized * distance;
+        // Direction from hand to mouse
+        Vector3 direction = mousePosition - transform.position;
 
-        transform.position = targetPosition;
-
+        // Calculate angle between player's right (forward) and mouse direction
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        // Clamp angle to [-maxAngle, maxAngle] relative to player's facing direction
+        float clampedAngle = Mathf.Clamp(angle, -maxAngle, maxAngle);
+
+        // Apply rotation (assuming hand's default is pointing right)
+        transform.rotation = Quaternion.Euler(0, 0, clampedAngle);
     }
 }

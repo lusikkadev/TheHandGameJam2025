@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 835227994450835144}
   - component: {fileID: 711390607688199162}
   m_Layer: 0
-  m_Name: HandTriggerArea
+  m_Name: SafeSpaceArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,9 +48,9 @@ MonoBehaviour:
   onTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8973867168339061106, guid: 0ef7831e5bd18cb46aa0862c04392e58, type: 3}
         m_TargetAssemblyTypeName: TheHand, Assembly-CSharp
-        m_MethodName: StartDescending
+        m_MethodName: StopDescending
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -63,9 +63,9 @@ MonoBehaviour:
   onTriggerExitEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8973867168339061106, guid: 0ef7831e5bd18cb46aa0862c04392e58, type: 3}
         m_TargetAssemblyTypeName: TheHand, Assembly-CSharp
-        m_MethodName: StopDescending
+        m_MethodName: StartDescending
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
