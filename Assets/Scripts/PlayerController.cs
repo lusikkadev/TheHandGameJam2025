@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public AnimationClip idleAnim;
     public AnimationClip jumpAnim;
     public AnimationClip landAnim;
+    public AnimationClip grabAnim;
 
     Vector2 movementInput;
     Vector2 smoothedMovementInput;
@@ -26,7 +27,11 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded = true;
     bool notJumping = true;
     bool facingRight = true;
+    public bool grabbed = false;
+
     bool isLanding = false;
+    float landingTimer = 0f;
+    float landingDuration = 0.2f;
 
 
     private void Awake()
@@ -76,7 +81,23 @@ public class PlayerController : MonoBehaviour
 
         bool isInput = Mathf.Abs(movementInput.x) > 0.01f;
 
-        //animator.Play(isInput ? runAnim.name : idleAnim.name);
+        if (grabbed)
+        {
+            animator.Play(grabAnim.name);
+            return; // Prevent other animations while grabbed
+        }
+
+        if (isLanding)
+        {
+            animator.Play(landAnim.name);
+            landingTimer -= Time.fixedDeltaTime;
+            if (landingTimer <= 0f)
+            {
+                isLanding = false;
+            }
+            return; // Prevent other animations while landing
+        }
+
         if (!notJumping)
         {
             animator.Play(jumpAnim.name);
@@ -93,6 +114,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnMove(InputValue value)
     {
+        if (grabbed) return;
         print("OnMove called");
         movementInput = value.Get<Vector2>();
 
@@ -101,6 +123,7 @@ public class PlayerController : MonoBehaviour
 
     void OnJump()
     {
+        if (grabbed) return;
         if (isGrounded && notJumping)
         {
             rb.AddForce(Vector2.up * jumpForce);
@@ -126,7 +149,8 @@ public class PlayerController : MonoBehaviour
 
         if (!isGrounded)
         {
-            animator.Play(landAnim.name);
+            isLanding = true;
+            landingTimer = landingDuration;
             isGrounded = true;
             rb.gravityScale = 1f;
             notJumping = true;
@@ -152,8 +176,9 @@ public class PlayerController : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
-    public void PlayerGrabbed(Transform handTransform)
+    public void PlayerGrabbed()
     {
+        grabbed = true;
         transform.SetParent(pickupPoint.transform);
 
         if (mainCamera != null)
@@ -164,6 +189,7 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
         gameManager.GameOver();
-        this.enabled = false;
+
+        //this.enabled = false;
     }
 }

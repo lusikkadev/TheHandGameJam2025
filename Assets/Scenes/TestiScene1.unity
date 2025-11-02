@@ -147,8 +147,8 @@ Transform:
   m_GameObject: {fileID: 100698389}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.11, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -13.8, z: 0}
+  m_LocalScale: {x: 1, y: 3.2773857, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2111502456}
@@ -192,6 +192,11 @@ MonoBehaviour:
   - {fileID: 1234441372}
   - {fileID: 802803340}
   fogRend: {fileID: 2111502457}
+  alphaAddAmt: 0.1
+  coDelay: 0.1
+  xAdd: 0.1
+  yAdd: 0.1
+  mAdd: 0.1
 --- !u!114 &100698393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransformFollow
   toFollow: {fileID: 1508832300}
-  offset: {x: 3, y: 5, z: 0}
+  offset: {x: 3, y: 0, z: 0}
 --- !u!1 &208982572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,6 +1984,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TheHand
       objectReference: {fileID: 0}
+    - target: {fileID: 6815290329264422779, guid: 0ef7831e5bd18cb46aa0862c04392e58, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.96
+      objectReference: {fileID: 0}
     - target: {fileID: 8588867953462592237, guid: 0ef7831e5bd18cb46aa0862c04392e58, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.35258
@@ -2028,6 +2037,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1508832299}
     - target: {fileID: 8973867168339061106, guid: 0ef7831e5bd18cb46aa0862c04392e58, type: 3}
+      propertyPath: grabAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 78b6cb4a709439a4b9c40dc028953ba7, type: 2}
+    - target: {fileID: 8973867168339061106, guid: 0ef7831e5bd18cb46aa0862c04392e58, type: 3}
+      propertyPath: idleAnim
+      value: 
+      objectReference: {fileID: 7400000, guid: 86b811ff69ae9ca4cb9792b3f5c29f4a, type: 2}
+    - target: {fileID: 8973867168339061106, guid: 0ef7831e5bd18cb46aa0862c04392e58, type: 3}
       propertyPath: retreatSpeed
       value: 1
       objectReference: {fileID: 0}
@@ -2052,6 +2069,14 @@ PrefabInstance:
       propertyPath: onTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1479345774}
+    - target: {fileID: 835227994450835144, guid: f75fafeaaa7184249aff5ff3b589f392, type: 3}
+      propertyPath: onTriggerExitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartDescending
+      objectReference: {fileID: 0}
+    - target: {fileID: 835227994450835144, guid: f75fafeaaa7184249aff5ff3b589f392, type: 3}
+      propertyPath: onTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopDescending
+      objectReference: {fileID: 0}
     - target: {fileID: 1806405584663037826, guid: f75fafeaaa7184249aff5ff3b589f392, type: 3}
       propertyPath: m_Name
       value: HandTriggerArea
