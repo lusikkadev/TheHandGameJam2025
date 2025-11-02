@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 148ca9d5b65266c4883a374a0e0ce8b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  backgroundMusic: {fileID: 8300000, guid: 0bf1b532d450ec74ca8c5ea64ffb46f9, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: 2d333d2399eec8649822849bc1b31934, type: 3}
 --- !u!4 &226821938
 Transform:
   m_ObjectHideFlags: 0
@@ -970,8 +970,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0ae90bf552f4904a8bc55b2a41591a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandFollow
-  player: {fileID: 0}
-  maxAngle: 30
+  player: {fileID: 1508832300}
+  maxAngle: 45
+  facingRight: 1
 --- !u!1 &1192154392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,8 +1338,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0ae90bf552f4904a8bc55b2a41591a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandFollow
-  player: {fileID: 0}
-  maxAngle: 30
+  player: {fileID: 1508832300}
+  maxAngle: 45
+  facingRight: 1
 --- !u!1 &1394990876
 GameObject:
   m_ObjectHideFlags: 0

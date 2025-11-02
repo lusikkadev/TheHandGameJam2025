@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
     public GameObject pickupPoint;
     public AnimationClip runAnim;
     public AnimationClip idleAnim;
-
+    public AnimationClip jumpAnim;
+    public AnimationClip landAnim;
 
     Vector2 movementInput;
     Vector2 smoothedMovementInput;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded = true;
     bool notJumping = true;
     bool facingRight = true;
+    bool isLanding = false;
 
 
     private void Awake()
@@ -45,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        notJumping = rb.linearVelocity.y <= 0.1f;
+        //notJumping = rb.linearVelocity.y <= 0.1f;
 
         if (!isGrounded)
         {
@@ -71,12 +73,29 @@ public class PlayerController : MonoBehaviour
         float currentZ = rb.rotation;
         float correctedZ = Mathf.LerpAngle(currentZ, targetZ, 10f * Time.deltaTime);
         rb.MoveRotation(correctedZ);
+
+        bool isInput = Mathf.Abs(movementInput.x) > 0.01f;
+
+        //animator.Play(isInput ? runAnim.name : idleAnim.name);
+        if (!notJumping)
+        {
+            animator.Play(jumpAnim.name);
+        }
+        else if (isInput)
+        {
+            animator.Play(runAnim.name);
+        }
+        else
+        {
+            animator.Play(idleAnim.name);
+        }
     }
 
     private void OnMove(InputValue value)
     {
+        print("OnMove called");
         movementInput = value.Get<Vector2>();
-        animator.Play(movementInput.x != 0 ? runAnim.name : idleAnim.name);
+
 
     }
 
@@ -86,6 +105,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce);
             isGrounded = false;
+            notJumping = false;
         }
     }
 
@@ -106,8 +126,10 @@ public class PlayerController : MonoBehaviour
 
         if (!isGrounded)
         {
+            animator.Play(landAnim.name);
             isGrounded = true;
             rb.gravityScale = 1f;
+            notJumping = true;
         }
         else
         {
