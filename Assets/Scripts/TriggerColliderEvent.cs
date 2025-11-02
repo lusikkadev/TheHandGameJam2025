@@ -8,11 +8,16 @@ public class TriggerColliderEvent : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        onTriggerStayEvent?.Invoke();
-        Debug.Log("Trigger Stay Invoked");
+        if (other.CompareTag("Player"))
+        {
+            onTriggerStayEvent?.Invoke();
+            Debug.Log("Trigger Stay Invoked");
+        }
+
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        onTriggerExitEvent?.Invoke();
+        if (other.CompareTag("Player"))
+            onTriggerExitEvent?.Invoke();
     }
 }

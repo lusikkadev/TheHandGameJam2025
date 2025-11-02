@@ -47,7 +47,7 @@ public class TheHand : MonoBehaviour
         }
         else
         {
-            float newX = Mathf.MoveTowards(currentX, startPos.x, retreatSpeed * Time.deltaTime);
+            float newX = Mathf.MoveTowards(currentX, transform.position.x, retreatSpeed * Time.deltaTime);
             float newY = Mathf.MoveTowards(transform.position.y, startPos.y, retreatSpeed * Time.deltaTime);
             transform.position = new Vector2(newX, newY);
         }

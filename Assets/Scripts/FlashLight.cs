@@ -7,6 +7,7 @@ public class FlashLight : MonoBehaviour
 {
     public float energy;
     public float maxEnergy = 20f;
+    public float minEnergy = 2f;
 
     public bool isOn = false;
 
@@ -29,7 +30,7 @@ public class FlashLight : MonoBehaviour
         particleSystems = GetComponentsInChildren<ParticleSystem>(true);
 
 
-        TurnOn();
+        TurnOff();
     }
 
 
@@ -44,6 +45,10 @@ public class FlashLight : MonoBehaviour
 
     public void TurnOn()
     {
+        if (energy <= minEnergy)
+        {
+            return;
+        }
 
         isOn = true;
         SetVisualsActive(true);

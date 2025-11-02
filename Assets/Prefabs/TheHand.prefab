@@ -53,10 +53,10 @@ MonoBehaviour:
   idleAnim: {fileID: 7400000, guid: 86b811ff69ae9ca4cb9792b3f5c29f4a, type: 2}
   triggered: 1
   grabbing: 0
-  normalSpeed: 0.5
-  speed: 0.5
+  normalSpeed: 1
+  speed: 1
   verticalSpeed: 5
-  retreatSpeed: 1
+  retreatSpeed: 2
   player: {fileID: 0}
 --- !u!61 &1752125381687126251
 BoxCollider2D:
@@ -92,7 +92,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.24136817, y: 0.9397756}
+  m_Offset: {x: 0.14005378, y: 1.6034876}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -102,7 +102,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.0423338, y: 0.7688706}
+  m_Size: {x: 1.9382143, y: 0.8722522}
   m_EdgeRadius: 0
 --- !u!95 &2739917789636648327
 Animator:
