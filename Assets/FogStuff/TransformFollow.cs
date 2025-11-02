@@ -5,8 +5,17 @@ public class TransformFollow : MonoBehaviour
     [SerializeField] private Transform toFollow;
     [SerializeField] private Vector3 offset;
 
+    bool follow = true;
+
     private void Update()
     {
-        transform.position = toFollow.position + offset;
+        if (follow)
+        {
+            transform.position = toFollow.position + offset;
+        }
+    }
+    public void StopFollow() 
+    {
+        follow = false;
     }
 }

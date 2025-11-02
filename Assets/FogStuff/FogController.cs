@@ -10,6 +10,8 @@ public class FogController : MonoBehaviour
     [SerializeField] private List<Transform> lightPositions;
     [SerializeField] private Renderer fogRend;
 
+    private TransformFollow tf;
+
     Color cachedColor;
 
     float cachedXNoiseScale;
@@ -25,11 +27,16 @@ public class FogController : MonoBehaviour
         cachedXNoiseScale = fogRend.material.GetFloat("_XNoiseScale");
         cachedYNoiseScale = fogRend.material.GetFloat("_YNoiseScale");
         cachedTiling = fogRend.material.GetFloat("_Tiling");
+
+        tf = GetComponent<TransformFollow>();
     }
 
     
     
-    
+    public void StopFogFollow() 
+    {
+        tf.StopFollow();
+    }
     private void Update()
     {
         fogRend.material.SetVector("_Light0Pos", lightPositions[0].position);
