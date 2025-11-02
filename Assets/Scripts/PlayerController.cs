@@ -7,7 +7,10 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     FlashLight flashLight;
     Animator animator;
+    CameraController mainCamera;
+    GameManager gameManager;
 
+    public GameObject pickupPoint;
     public AnimationClip runAnim;
     public AnimationClip idleAnim;
 
@@ -26,6 +29,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        gameManager = FindFirstObjectByType<GameManager>();
+        mainCamera = FindFirstObjectByType<CameraController>();
         flashLight = GetComponentInChildren<FlashLight>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -125,4 +130,18 @@ public class PlayerController : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
+    public void PlayerGrabbed(Transform handTransform)
+    {
+        transform.SetParent(pickupPoint.transform);
+
+        if (mainCamera != null)
+        {
+            mainCamera.enabled = false;
+        }
+
+        rb.linearVelocity = Vector2.zero;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        gameManager.GameOver();
+        this.enabled = false;
+    }
 }

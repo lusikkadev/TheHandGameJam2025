@@ -54,4 +54,19 @@ public class TheHand : MonoBehaviour
     {
         triggered = true;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            //handAnim.Play("Hand_Grab");
+            StopDescending();
+
+            var playerController = collision.gameObject.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.PlayerGrabbed(transform);
+            }
+        }
+    }
 }

@@ -97,7 +97,6 @@ Transform:
   - {fileID: 7378156515101585958}
   - {fileID: 4848355176593077671}
   - {fileID: 1340768021790529295}
-  - {fileID: 3083986604686960172}
   - {fileID: 2087288294254595096}
   - {fileID: 1718204603053032615}
   - {fileID: 5435662953101468597}
@@ -556,6 +555,7 @@ GameObject:
   - component: {fileID: 2087288294254595096}
   - component: {fileID: 8455811877045184950}
   - component: {fileID: 5968585533006064165}
+  - component: {fileID: 5901146950139571999}
   m_Layer: 0
   m_Name: Left Forearm
   m_TagString: Untagged
@@ -575,7 +575,8 @@ Transform:
   m_LocalPosition: {x: 3.1750002, y: 12.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3083986604686960172}
   m_Father: {fileID: 9144776980859106056}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8455811877045184950
@@ -659,6 +660,20 @@ MonoBehaviour:
     m_Extent: {x: 1.3657203, y: 1.2870202, z: 0}
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!114 &5901146950139571999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2250690691192163127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ae90bf552f4904a8bc55b2a41591a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HandFollow
+  player: {fileID: 9144776980859106056}
+  maxDistance: 2
 --- !u!1 &2384006817302608323
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,6 +685,7 @@ GameObject:
   - component: {fileID: 3083986604686960172}
   - component: {fileID: 4393332397690881716}
   - component: {fileID: 4484787575608764388}
+  - component: {fileID: 8384809463204630371}
   m_Layer: 0
   m_Name: Flashlight
   m_TagString: Untagged
@@ -686,13 +702,13 @@ Transform:
   m_GameObject: {fileID: 2384006817302608323}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.49, y: 13.34, z: 0}
+  m_LocalPosition: {x: 1.3149996, y: 1.1800003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7244859697829567387}
   - {fileID: 7667704265232663363}
-  m_Father: {fileID: 9144776980859106056}
+  m_Father: {fileID: 2087288294254595096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4393332397690881716
 SpriteRenderer:
@@ -774,6 +790,22 @@ MonoBehaviour:
     m_Extent: {x: 1.2876596, y: 0.51888514, z: 0}
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!114 &8384809463204630371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2384006817302608323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e49e2ae0a60123489f19c2a368e6f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashLight
+  energy: 0
+  maxEnergy: 20
+  isOn: 0
+  fogController: {fileID: 0}
 --- !u!1 &2426709645864246086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,7 +1224,7 @@ GameObject:
   - component: {fileID: 329074296925159489}
   m_Layer: 0
   m_Name: TestPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1252,11 +1284,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9af19ebc785969439a81661dd90931a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
+  pickupPoint: {fileID: 0}
   runAnim: {fileID: 7400000, guid: f187090251ef7d741a49ef56ab253123, type: 2}
   idleAnim: {fileID: 7400000, guid: 5df42eac577e43b4e8760383b82c0b01, type: 2}
   speed: 2
-  jumpForce: 250
-  gravityModifier: 0.2
+  jumpForce: 300
+  gravityModifier: 0.4
   isGrounded: 1
 --- !u!114 &4878924108791456227
 MonoBehaviour:
@@ -1612,7 +1645,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7244859697829567387}
   - component: {fileID: 446394623037157061}
-  - component: {fileID: 7134044226208400646}
   m_Layer: 0
   m_Name: Freeform Light 2D
   m_TagString: Untagged
@@ -1698,21 +1730,6 @@ MonoBehaviour:
   - {x: -1.2661707, y: 2.0220656, z: 0}
   - {x: -1.1801912, y: 1.5642766, z: 0}
   - {x: -1.100952, y: 0.62783575, z: 0}
---- !u!114 &7134044226208400646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4094859584132913625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e49e2ae0a60123489f19c2a368e6f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FlashLight
-  intensity: 1
-  isOn: 0
-  fogController: {fileID: 0}
 --- !u!1 &4709787594319658197
 GameObject:
   m_ObjectHideFlags: 0
