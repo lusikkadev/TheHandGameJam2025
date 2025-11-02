@@ -94,6 +94,10 @@ public class FogController : MonoBehaviour
     }
     public void OnPlayerGrabbed() 
     {
+        foreach(var t in lightPositions) 
+        {
+            t.gameObject.transform.position = new Vector3(0f, 999, 0f);
+        }
         StartCoroutine(PlayerGrabbedEffectCo());
     }
     [SerializeField] private float alphaAddAmt = 0.1f;
