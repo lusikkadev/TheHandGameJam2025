@@ -183,6 +183,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerGrabbed()
     {
+        flashLight.TurnOff();
         grabbed = true;
         transform.SetParent(pickupPoint.transform);
         transform.localPosition = Vector3.zero;
