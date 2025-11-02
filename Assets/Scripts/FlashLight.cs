@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
@@ -31,6 +32,8 @@ public class FlashLight : MonoBehaviour
         TurnOn();
     }
 
+
+
     private void Start()
     {
         energy = maxEnergy;
@@ -41,7 +44,7 @@ public class FlashLight : MonoBehaviour
 
     public void TurnOn()
     {
-        theHand.StopDescending();
+
         isOn = true;
         SetVisualsActive(true);
 
@@ -74,7 +77,7 @@ public class FlashLight : MonoBehaviour
         if (isOn)
         {
             energy -= 1f * Time.deltaTime;
-
+            theHand.StopDescending();
             // auto turn off when drained
             if (energy <= 0f)
             {

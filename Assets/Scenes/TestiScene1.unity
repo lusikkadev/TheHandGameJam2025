@@ -2123,12 +2123,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5191202359986543304, guid: fe24e420a785f4f4c967cc437420446e, type: 3}
+      propertyPath: onTriggerExitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1479345774}
+    - target: {fileID: 5191202359986543304, guid: fe24e420a785f4f4c967cc437420446e, type: 3}
       propertyPath: onTriggerStayEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1479345774}
     - target: {fileID: 5191202359986543304, guid: fe24e420a785f4f4c967cc437420446e, type: 3}
       propertyPath: onTriggerStayEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191202359986543304, guid: fe24e420a785f4f4c967cc437420446e, type: 3}
+      propertyPath: onTriggerExitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartDescending
       objectReference: {fileID: 0}
     - target: {fileID: 5191202359986543304, guid: fe24e420a785f4f4c967cc437420446e, type: 3}
       propertyPath: onTriggerStayEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
