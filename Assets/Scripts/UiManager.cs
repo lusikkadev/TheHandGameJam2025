@@ -27,10 +27,10 @@ public class UiManager : MonoBehaviour
     }
     private void QuitGame() 
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
     private void RestartGame() 
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

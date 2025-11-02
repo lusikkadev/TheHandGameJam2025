@@ -11,7 +11,7 @@ public class MainMenuUi : MonoBehaviour
     {
         startButton.onClick.AddListener(() =>
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         });
         quitButton.onClick.AddListener(() => 
         {
