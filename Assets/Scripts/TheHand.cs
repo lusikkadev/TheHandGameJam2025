@@ -11,6 +11,7 @@ public class TheHand : MonoBehaviour
 
     public float normalSpeed = 0.2f;
     public float speed = 0.2f;
+    public float verticalSpeed = 5f;
     public float retreatSpeed = 5f;
 
     public GameObject player;
@@ -32,22 +33,23 @@ public class TheHand : MonoBehaviour
     }
     private void Update()
     {
-        var posX = transform.position.x;
         playerPos = player.transform.position;
-        
+        float targetX = playerPos.x;
+        float currentX = transform.position.x;
 
         if (triggered && !grabbing)
         {
-            posX = player.transform.position.x;
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(playerPos.x, playerPos.y + 1f), speed * Time.deltaTime);
-            transform.position = new Vector2(posX, transform.position.y);
-
+ 
+            float newX = Mathf.MoveTowards(currentX, targetX, verticalSpeed * Time.deltaTime);
+   
+            float newY = Mathf.MoveTowards(transform.position.y, playerPos.y + 1f, speed * Time.deltaTime);
+            transform.position = new Vector2(newX, newY);
         }
         else
         {
-            posX = transform.position.x;
-            transform.position = Vector2.MoveTowards(transform.position, startPos, retreatSpeed * Time.deltaTime);
-            transform.position = new Vector2(posX, transform.position.y);
+            float newX = Mathf.MoveTowards(currentX, startPos.x, retreatSpeed * Time.deltaTime);
+            float newY = Mathf.MoveTowards(transform.position.y, startPos.y, retreatSpeed * Time.deltaTime);
+            transform.position = new Vector2(newX, newY);
         }
 
         if (grabbing)

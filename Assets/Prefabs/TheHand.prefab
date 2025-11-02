@@ -54,7 +54,7 @@ MonoBehaviour:
   triggered: 1
   grabbing: 0
   normalSpeed: 0.2
-  speed: 0.2
+  speed: 0.5
   retreatSpeed: 1
   player: {fileID: 0}
 --- !u!61 &1752125381687126251

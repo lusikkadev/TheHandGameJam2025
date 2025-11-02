@@ -14,5 +14,6 @@ public class TriggerColliderEvent : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         onTriggerExitEvent?.Invoke();
+        Debug.LogWarning("Trigger Exit Invoked");
     }
 }
