@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class FlashLight : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class FlashLight : MonoBehaviour
     public bool isOn = false;
 
     [SerializeField] private FogController fogController; // REPLACE DIRECT REFERENCE
+    [SerializeField] private Slider batterySlider;
 
 
     private Light2D[] lights;
@@ -28,6 +30,9 @@ public class FlashLight : MonoBehaviour
     private void Start()
     {
         energy = maxEnergy;
+
+        batterySlider.maxValue = maxEnergy;
+        batterySlider.minValue = 0f;
     }
 
     public void TurnOn()
@@ -77,5 +82,6 @@ public class FlashLight : MonoBehaviour
         }
 
         energy = Mathf.Clamp(energy, 0f, maxEnergy);
+        batterySlider.value = energy;
     }
 }

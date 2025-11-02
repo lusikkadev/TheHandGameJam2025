@@ -44,8 +44,12 @@ Material:
     - _FadeDistance: 1
     - _Light0FadeDist: 0
     - _Light0Rem: 0
+    - _NoiseMult: 1
     - _Rem: -1
+    - _XNoiseScale: 2
+    - _YNoiseScale: 1
     m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 0.47058824}
     - _Light0Pos: {r: 0, g: 20, b: 0, a: 0}
     - _Light1Pos: {r: 0, g: 20, b: 0, a: 0}
     - _Light2Pos: {r: 0, g: 20, b: 0, a: 0}
