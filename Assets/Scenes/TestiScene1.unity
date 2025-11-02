@@ -1540,6 +1540,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 18438820532844099, guid: 88d5243ed47007b48b25e51436c33574, type: 3}
+      propertyPath: batterySlider
+      value: 
+      objectReference: {fileID: 47862719}
     - target: {fileID: 1790024694534755096, guid: 88d5243ed47007b48b25e51436c33574, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6629,6 +6633,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5191202359986543304, guid: fe24e420a785f4f4c967cc437420446e, type: 3}
+      propertyPath: onTriggerStayEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191202359986543304, guid: fe24e420a785f4f4c967cc437420446e, type: 3}
+      propertyPath: onTriggerStayEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191202359986543304, guid: fe24e420a785f4f4c967cc437420446e, type: 3}
+      propertyPath: onTriggerExitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1479345774}
+    - target: {fileID: 5191202359986543304, guid: fe24e420a785f4f4c967cc437420446e, type: 3}
+      propertyPath: onTriggerStayEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1479345774}
+    - target: {fileID: 5191202359986543304, guid: fe24e420a785f4f4c967cc437420446e, type: 3}
+      propertyPath: onTriggerStayEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191202359986543304, guid: fe24e420a785f4f4c967cc437420446e, type: 3}
+      propertyPath: onTriggerExitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartDescending
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191202359986543304, guid: fe24e420a785f4f4c967cc437420446e, type: 3}
+      propertyPath: onTriggerStayEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopDescending
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191202359986543304, guid: fe24e420a785f4f4c967cc437420446e, type: 3}
+      propertyPath: onTriggerStayEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TheHand, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191202359986543304, guid: fe24e420a785f4f4c967cc437420446e, type: 3}
+      propertyPath: onTriggerStayEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7143932008029169947, guid: fe24e420a785f4f4c967cc437420446e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 104.51371
@@ -7193,7 +7233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3740565971035076431, guid: 852c9f97b5f063749840eedb383805e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.73
+      value: -1.8
       objectReference: {fileID: 0}
     - target: {fileID: 3740565971035076431, guid: 852c9f97b5f063749840eedb383805e9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7230,6 +7270,14 @@ PrefabInstance:
     - target: {fileID: 3740565971035076431, guid: 852c9f97b5f063749840eedb383805e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384809463204630371, guid: 852c9f97b5f063749840eedb383805e9, type: 3}
+      propertyPath: isOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384809463204630371, guid: 852c9f97b5f063749840eedb383805e9, type: 3}
+      propertyPath: maxEnergy
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8384809463204630371, guid: 852c9f97b5f063749840eedb383805e9, type: 3}
       propertyPath: batterySlider

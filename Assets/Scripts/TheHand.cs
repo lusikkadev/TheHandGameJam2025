@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class TheHand : MonoBehaviour
 {
@@ -6,7 +7,7 @@ public class TheHand : MonoBehaviour
     public AnimationClip grabAnim;
     public AnimationClip idleAnim;
 
-    public bool triggered = false;
+    private bool triggered = false;
     public bool grabbing = false;
 
     public float normalSpeed = 0.2f;
@@ -19,9 +20,11 @@ public class TheHand : MonoBehaviour
 
     Vector2 playerPos;
     Vector2 startPos;
+
+    bool ended = false;
     public void OnGameEnd() 
     {
-        triggered = false;
+        ended = true;
     }
     private void Awake()
     {
@@ -36,13 +39,17 @@ public class TheHand : MonoBehaviour
     }
     private void Update()
     {
+        if (ended) return;
+        
         playerPos = player.transform.position;
         float targetX = playerPos.x;
         float currentX = transform.position.x;
 
-        if (triggered && !grabbing)
-        {
 
+
+        Debug.Log($"T {triggered}, G {grabbing}");
+        if (triggered && !grabbing)
+        {           
             float newX = Mathf.MoveTowards(currentX, targetX, verticalSpeed * Time.deltaTime);
 
             float newY = Mathf.MoveTowards(transform.position.y, playerPos.y + 1f, speed * Time.deltaTime);
@@ -57,11 +64,13 @@ public class TheHand : MonoBehaviour
 
         if (grabbing)
         {
-            handAnim.Play(grabAnim.name);
+            if(handAnim)
+                handAnim.Play(grabAnim.name);
         }
         else
         {
-            handAnim.Play(idleAnim.name);
+            if (handAnim)
+                handAnim.Play(idleAnim.name);
         }
 
     }
@@ -71,10 +80,12 @@ public class TheHand : MonoBehaviour
     public void StopDescending()
     {
         triggered = false;
+        Debug.LogWarning("NotTriggered");
     }
     public void StartDescending()
     {
         triggered = true;
+        Debug.LogWarning("Triggered");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
