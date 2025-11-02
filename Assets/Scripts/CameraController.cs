@@ -4,13 +4,26 @@ public class CameraController : MonoBehaviour
 {
     public GameObject player;
     public Vector2 offset;
+    public float maxYFollow = 0.5f;
+
+    private float baseY;
+
+    void Start()
+    {
+
+        baseY = transform.position.y;
+    }
 
     void Update()
     {
-        // Update the camera position based on the player's position and the offset
         if (player != null)
         {
-            Vector3 newPosition = player.transform.position + new Vector3(offset.x, offset.y, -10);
+       
+            float targetY = player.transform.position.y + offset.y;
+         
+            float clampedY = Mathf.Clamp(targetY, baseY - maxYFollow, baseY + maxYFollow);
+
+            Vector3 newPosition = new Vector3(player.transform.position.x + offset.x, clampedY, -10);
             transform.position = newPosition;
         }
     }
