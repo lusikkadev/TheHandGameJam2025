@@ -49,7 +49,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TheHand
   handAnim: {fileID: 0}
-  handGrab: {fileID: 7400000, guid: 78b6cb4a709439a4b9c40dc028953ba7, type: 2}
   triggered: 0
   normalSpeed: 0.2
   speed: 3
@@ -89,7 +88,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.24136817, y: 0.9397756}
+  m_Offset: {x: 0.24136817, y: 1.689569}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -99,7 +98,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.0423338, y: 0.7688706}
+  m_Size: {x: 3.0423338, y: 2.596734}
   m_EdgeRadius: 0
 --- !u!95 &2739917789636648327
 Animator:
@@ -148,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 6879382312380587415}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.24, y: 1.232, z: 0}
+  m_LocalPosition: {x: -0.24, y: 0.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

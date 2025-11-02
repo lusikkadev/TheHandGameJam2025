@@ -31,8 +31,8 @@ public class FlashLight : MonoBehaviour
     {
         energy = maxEnergy;
 
-        //batterySlider.maxValue = maxEnergy;
-        //batterySlider.minValue = 0f;
+        batterySlider.maxValue = maxEnergy;
+        batterySlider.minValue = 0f;
     }
 
     public void TurnOn()
@@ -82,6 +82,6 @@ public class FlashLight : MonoBehaviour
         }
 
         energy = Mathf.Clamp(energy, 0f, maxEnergy);
-        //batterySlider.value = energy;
+        batterySlider.value = energy;
     }
 }
