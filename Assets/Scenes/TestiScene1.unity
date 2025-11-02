@@ -197,6 +197,7 @@ MonoBehaviour:
   xAdd: 0.1
   yAdd: 0.1
   mAdd: 0.1
+  tAdd: 0.1
 --- !u!114 &100698393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1986,7 +1987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6815290329264422779, guid: 0ef7831e5bd18cb46aa0862c04392e58, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.96
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 8588867953462592237, guid: 0ef7831e5bd18cb46aa0862c04392e58, type: 3}
       propertyPath: m_LocalPosition.x

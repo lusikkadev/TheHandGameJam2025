@@ -134,6 +134,11 @@ public class PlayerController : MonoBehaviour
 
     void OnAttack()
     {
+        if (grabbed)
+        {
+            flashLight.TurnOff();
+            return;
+        }
         if (flashLight.isOn)
         {
             flashLight.TurnOff();
@@ -180,6 +185,7 @@ public class PlayerController : MonoBehaviour
     {
         grabbed = true;
         transform.SetParent(pickupPoint.transform);
+        transform.localPosition = Vector3.zero;
 
         if (mainCamera != null)
         {
