@@ -19,7 +19,10 @@ public class TheHand : MonoBehaviour
 
     Vector2 playerPos;
     Vector2 startPos;
-
+    public void OnGameEnd() 
+    {
+        triggered = false;
+    }
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");

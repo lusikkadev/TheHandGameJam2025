@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Boat : MonoBehaviour
@@ -12,6 +13,14 @@ public class Boat : MonoBehaviour
         player = collision.gameObject;
         player.transform.SetParent(transform);
 
+        TheHand hand = FindFirstObjectByType<TheHand>();
+        if (hand)
+        {
+            hand.OnGameEnd();
+        }
+
+        StartCoroutine(EndGameCo());
+
     }
 
     private void Update()
@@ -22,5 +31,14 @@ public class Boat : MonoBehaviour
             position.x += 1.0f * Time.deltaTime;
             transform.position = position;
         }
+    }
+
+    private IEnumerator EndGameCo() 
+    {
+        yield return new WaitForSeconds(5);
+
+        GameManager gm = FindFirstObjectByType<GameManager>();
+        if (gm)
+            gm.GameOver();
     }
 }
