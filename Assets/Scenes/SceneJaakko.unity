@@ -194,9 +194,10 @@ MonoBehaviour:
   fogRend: {fileID: 2111502457}
   alphaAddAmt: 0.005
   coDelay: 0.075
-  xAdd: 0.01
-  yAdd: 0.02
-  mAdd: 0.05
+  xAdd: 0.0001
+  yAdd: 0.0001
+  mAdd: 0.0001
+  tAdd: 0.005
 --- !u!114 &100698393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3767,6 +3768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9af19ebc785969439a81661dd90931a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
+  pickupPoint: {fileID: 0}
   runAnim: {fileID: 7400000, guid: f187090251ef7d741a49ef56ab253123, type: 2}
   idleAnim: {fileID: 7400000, guid: 5df42eac577e43b4e8760383b82c0b01, type: 2}
   speed: 2

@@ -15,6 +15,7 @@ public class FogController : MonoBehaviour
     float cachedXNoiseScale;
     float cachedYNoiseScale;
     float cachedNoiseMult;
+    float cachedTiling;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class FogController : MonoBehaviour
         cachedNoiseMult = fogRend.material.GetFloat("_NoiseMult");
         cachedXNoiseScale = fogRend.material.GetFloat("_XNoiseScale");
         cachedYNoiseScale = fogRend.material.GetFloat("_YNoiseScale");
+        cachedTiling = fogRend.material.GetFloat("_Tiling");
     }
 
     
@@ -73,6 +75,7 @@ public class FogController : MonoBehaviour
         fogRend.material.SetFloat("_XNoiseScale", cachedXNoiseScale);
         fogRend.material.SetFloat("_YNoiseScale", cachedYNoiseScale);
         fogRend.material.SetFloat("_NoiseMult", cachedNoiseMult);
+        fogRend.material.SetFloat("_Tiling", cachedTiling);
     }
     public void OnPlayerGrabbed() 
     {
@@ -84,6 +87,7 @@ public class FogController : MonoBehaviour
     [SerializeField] private float xAdd = 0.1f;
     [SerializeField] private float yAdd = 0.1f;
     [SerializeField] private float mAdd = 0.1f;
+    [SerializeField] private float tAdd = 0.1f;
    
     private IEnumerator PlayerGrabbedEffectCo() 
     {
@@ -92,6 +96,7 @@ public class FogController : MonoBehaviour
         float x = cachedXNoiseScale;
         float y = cachedYNoiseScale;
         float m = cachedNoiseMult;
+        float t = cachedTiling;
 
         while (true) 
         {
@@ -105,10 +110,12 @@ public class FogController : MonoBehaviour
             x += xAdd;
             y += yAdd;
             m += mAdd;
+            t += tAdd;
 
             fogRend.material.SetFloat("_XNoiseScale", x);
             fogRend.material.SetFloat("_YNoiseScale", y);
             fogRend.material.SetFloat("_NoiseMult", m);
+            fogRend.material.SetFloat("_Tiling", t);
         }
     }
 }
