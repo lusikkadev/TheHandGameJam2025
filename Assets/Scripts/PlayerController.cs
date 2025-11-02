@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     CameraController mainCamera;
     GameManager gameManager;
+    AudioManager audioManager;
 
     public GameObject pickupPoint;
     public AnimationClip runAnim;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public AnimationClip jumpAnim;
     public AnimationClip landAnim;
     public AnimationClip grabAnim;
+    public AudioClip walkSound;
 
     Vector2 movementInput;
     Vector2 smoothedMovementInput;
@@ -41,6 +43,7 @@ public class PlayerController : MonoBehaviour
         flashLight = GetComponentInChildren<FlashLight>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioManager = FindFirstObjectByType<AudioManager>();
 
         facingRight = transform.localScale.x >= 0;
     }
@@ -90,6 +93,7 @@ public class PlayerController : MonoBehaviour
         if (isLanding)
         {
             animator.Play(landAnim.name);
+            
             landingTimer -= Time.fixedDeltaTime;
             if (landingTimer <= 0f)
             {
@@ -101,6 +105,7 @@ public class PlayerController : MonoBehaviour
         if (!notJumping)
         {
             animator.Play(jumpAnim.name);
+            
         }
         else if (isInput)
         {
@@ -126,9 +131,11 @@ public class PlayerController : MonoBehaviour
         if (grabbed) return;
         if (isGrounded && notJumping)
         {
+            
             rb.AddForce(Vector2.up * jumpForce);
             isGrounded = false;
             notJumping = false;
+            audioManager.PlayJumpSound();
         }
     }
 
@@ -159,6 +166,7 @@ public class PlayerController : MonoBehaviour
             isGrounded = true;
             rb.gravityScale = 1f;
             notJumping = true;
+            audioManager.PlayLandSound();
         }
         else
         {
@@ -199,4 +207,6 @@ public class PlayerController : MonoBehaviour
 
         //this.enabled = false;
     }
+
+
 }

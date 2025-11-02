@@ -168,19 +168,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2371348645967217626, guid: d328288817f94634c994b6f2bd8c295d, type: 3}
       propertyPath: m_Size.x
-      value: 3.233448
+      value: 2.785573
       objectReference: {fileID: 0}
     - target: {fileID: 2371348645967217626, guid: d328288817f94634c994b6f2bd8c295d, type: 3}
       propertyPath: m_Size.y
-      value: 8.22127
+      value: 6.579055
       objectReference: {fileID: 0}
     - target: {fileID: 2371348645967217626, guid: d328288817f94634c994b6f2bd8c295d, type: 3}
       propertyPath: m_Offset.x
-      value: 0.044534445
+      value: 0.037748337
       objectReference: {fileID: 0}
     - target: {fileID: 2371348645967217626, guid: d328288817f94634c994b6f2bd8c295d, type: 3}
       propertyPath: m_Offset.y
-      value: 0.27736187
+      value: 1.0984693
       objectReference: {fileID: 0}
     - target: {fileID: 5411017431834430506, guid: d328288817f94634c994b6f2bd8c295d, type: 3}
       propertyPath: onTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.size

@@ -54,4 +54,9 @@ public class AudioManager : MonoBehaviour
     {
         PlaySound(rumble);
     }
+
+    public void PlayWalkingSound()
+    {
+        //audioSource.PlayOneShot(walkingSFX);
+    }
 }
