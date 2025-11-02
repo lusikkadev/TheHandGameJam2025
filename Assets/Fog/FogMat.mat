@@ -44,13 +44,22 @@ Material:
     - _FadeDistance: 1
     - _Light0FadeDist: 0
     - _Light0Rem: 0
+    - _Light10Pos: 0
+    - _Light13Pos: 0
     - _NoiseMult: 1
     - _Rem: -1
+    - _Tiling: 0.2
     - _XNoiseScale: 2
     - _YNoiseScale: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 0.47058824}
     - _Light0Pos: {r: 0, g: 20, b: 0, a: 0}
+    - _Light10Pos: {r: 0, g: 20, b: 0, a: 0}
+    - _Light11Pos: {r: 0, g: 20, b: 0, a: 0}
+    - _Light12Pos: {r: 0, g: 20, b: 0, a: 0}
+    - _Light13Pos: {r: 0, g: 20, b: 0, a: 0}
+    - _Light14Pos: {r: 0, g: 20, b: 0, a: 0}
+    - _Light15Pos: {r: 0, g: 20, b: 0, a: 0}
     - _Light1Pos: {r: 0, g: 20, b: 0, a: 0}
     - _Light2Pos: {r: 0, g: 20, b: 0, a: 0}
     - _Light3Pos: {r: 0, g: 20, b: 0, a: 0}
@@ -58,6 +67,8 @@ Material:
     - _Light5Pos: {r: 0, g: 20, b: 0, a: 0}
     - _Light6Pos: {r: 0, g: 20, b: 0, a: 0}
     - _Light7Pos: {r: 0, g: 20, b: 0, a: 0}
+    - _Light8Pos: {r: 0, g: 20, b: 0, a: 0}
+    - _Light9Pos: {r: 0, g: 20, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &3901596902613354500

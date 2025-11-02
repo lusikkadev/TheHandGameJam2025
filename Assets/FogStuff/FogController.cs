@@ -46,6 +46,14 @@ public class FogController : MonoBehaviour
         fogRend.material.SetVector("_Light4Pos", lightPositions[4].position);
         fogRend.material.SetVector("_Light5Pos", lightPositions[5].position);
         fogRend.material.SetVector("_Light6Pos", lightPositions[6].position);
+        fogRend.material.SetVector("_Light7Pos", lightPositions[7].position);
+        fogRend.material.SetVector("_Light8Pos", lightPositions[8].position);
+        fogRend.material.SetVector("_Light9Pos", lightPositions[9].position);
+        fogRend.material.SetVector("_Light10Pos", lightPositions[10].position);
+        fogRend.material.SetVector("_Light11Pos", lightPositions[11].position);
+        fogRend.material.SetVector("_Light12Pos", lightPositions[12].position);
+        fogRend.material.SetVector("_Light13Pos", lightPositions[13].position);
+        fogRend.material.SetVector("_Light14Pos", lightPositions[14].position);
         
         fogRend.material.SetFloat("_FadeDistance", fadeDist);
         fogRend.material.SetFloat("_Rem", remDist);

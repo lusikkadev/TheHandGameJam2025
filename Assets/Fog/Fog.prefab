@@ -72,6 +72,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   fogRend: {fileID: 2153326173216962432}
   alphaAddAmt: 0.005
   coDelay: 0.075
@@ -92,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransformFollow
   toFollow: {fileID: 0}
-  offset: {x: 1.75, y: 2.75, z: 0}
+  offset: {x: 1.75, y: -2, z: 0}
 --- !u!1 &8563672515626787058
 GameObject:
   m_ObjectHideFlags: 0
