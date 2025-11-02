@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TestMat
+  m_Shader: {fileID: -6465566751694194690, guid: 66752e1d9f0ac7245884e93ca9472685, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseTexture:
+        m_Texture: {fileID: 2800000, guid: f4f2ce8455f9d32489e9daa762e4d91b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _FadeDistance: 1
+    - _Light0FadeDist: 0
+    - _Light0Rem: 0
+    - _NoiseMult: 1.75
+    - _Rem: -1
+    - _Tiling: 2.06
+    - _XNoiseScale: 1
+    - _YNoiseScale: 1
+    m_Colors:
+    - _BaseColor: {r: 1, g: 0, b: 0, a: 1}
+    - _Light0Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Light10Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Light11Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Light12Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Light13Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Light14Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Light15Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Light1Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Light2Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Light3Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Light4Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Light5Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Light6Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Light7Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Light8Pos: {r: 0, g: 0, b: 0, a: 0}
+    - _Light9Pos: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
+--- !u!114 &8198394209680808439
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
+  version: 10
