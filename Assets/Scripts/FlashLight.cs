@@ -39,7 +39,6 @@ public class FlashLight : MonoBehaviour
 
     public void ChangeLightRegenSpeed(bool value) 
     {
-        Debug.Log($"Regen Speed {value}");
         if (value) 
         {
             currentRegenSpeed = maxRegenSpeed;

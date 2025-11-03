@@ -9,6 +9,7 @@ public class TriggerColliderEvent : MonoBehaviour
 
     bool gotRef = false;
     PlayerReferences reference;
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -28,8 +29,14 @@ public class TriggerColliderEvent : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-            onTriggerExitEvent?.Invoke();
+        if (other.CompareTag("Player")) 
+        {
+            if(onTriggerExitEvent != null) 
+            {
+                onTriggerExitEvent.Invoke();
+            }
+        }
+        
 
         if (reference != null)
         {

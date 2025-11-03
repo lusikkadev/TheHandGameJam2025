@@ -6,6 +6,7 @@ public class UiManager : MonoBehaviour
 {
     [SerializeField] private Button quitButton;
     [SerializeField] private Button restartButton;
+    [SerializeField] private Slider batterySlider;
     [SerializeField] private GameObject gameOverPanel;
 
     private void Awake()
@@ -20,10 +21,12 @@ public class UiManager : MonoBehaviour
         });
 
         gameOverPanel.SetActive(false);
+        batterySlider.gameObject.SetActive(true);
     }
     public void OnGameOver() 
     {
         gameOverPanel.SetActive(true);
+        batterySlider.gameObject.SetActive(false);
     }
     private void QuitGame() 
     {

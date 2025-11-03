@@ -40,5 +40,8 @@ public class Boat : MonoBehaviour
         GameManager gm = FindFirstObjectByType<GameManager>();
         if (gm)
             gm.GameOver();
+
+        yield return new WaitForSeconds(5f);
+        isMoving=false;
     }
 }
