@@ -57,6 +57,6 @@ public class AudioManager : MonoBehaviour
 
     public void PlayWalkingSound()
     {
-        //audioSource.PlayOneShot(walkingSFX);
+        audioSource.PlayOneShot(walkingSFX);
     }
 }

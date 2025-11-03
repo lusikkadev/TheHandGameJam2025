@@ -11,22 +11,21 @@ public class PlayerController : MonoBehaviour
     GameManager gameManager;
     AudioManager audioManager;
 
-    public GameObject pickupPoint;
-    public AnimationClip runAnim;
-    public AnimationClip idleAnim;
-    public AnimationClip jumpAnim;
-    public AnimationClip landAnim;
-    public AnimationClip grabAnim;
-    public AudioClip walkSound;
+    [SerializeField] GameObject pickupPoint;
+    [SerializeField] AnimationClip runAnim;
+    [SerializeField] AnimationClip idleAnim;
+    [SerializeField] AnimationClip jumpAnim;
+    [SerializeField] AnimationClip landAnim;
+    [SerializeField] AnimationClip grabAnim;
 
     Vector2 movementInput;
     Vector2 smoothedMovementInput;
     Vector2 movementInputSmoothVelocity;
 
-    public float speed = 2f;
-    public float jumpForce = 125f;
-    public float gravityModifier = 0.2f;
-    public bool isGrounded = true;
+    [SerializeField] float speed = 2f;
+    [SerializeField] float jumpForce = 125f;
+    [SerializeField] float gravityModifier = 0.2f;
+    [SerializeField] bool isGrounded = true;
     bool notJumping = true;
     bool facingRight = true;
     public bool grabbed = false;
@@ -48,14 +47,9 @@ public class PlayerController : MonoBehaviour
         facingRight = transform.localScale.x >= 0;
     }
 
-    void Start()
-    {
-
-    }
 
     void Update()
     {
-        //notJumping = rb.linearVelocity.y <= 0.1f;
 
         if (!isGrounded)
         {
@@ -64,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            RestartThisScene();
+            gameManager.RestartThisScene();
         }
 
     }
@@ -74,7 +68,7 @@ public class PlayerController : MonoBehaviour
         if (grabbed)
         {
             animator.Play(grabAnim.name);
-            return; // Prevent other animations while grabbed
+            return;
         }
 
         smoothedMovementInput = Vector2.SmoothDamp(smoothedMovementInput, movementInput, ref movementInputSmoothVelocity, 0.1f);
@@ -99,7 +93,7 @@ public class PlayerController : MonoBehaviour
             {
                 isLanding = false;
             }
-            return; // Prevent other animations while landing
+            return;
         }
 
         if (!notJumping)
@@ -183,11 +177,6 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void RestartThisScene()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-    }
-
     public void PlayerGrabbed()
     {
         flashLight.TurnOff();
@@ -204,7 +193,12 @@ public class PlayerController : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Kinematic;
         gameManager.GameOver();
 
-        //this.enabled = false;
+        
+    }
+
+    public void WalkSFX()
+    {
+        audioManager.PlayWalkingSound();
     }
 
 

@@ -2,19 +2,19 @@ using UnityEngine;
 
 public class TheHand : MonoBehaviour
 {
-    public Animator handAnim;
-    public AnimationClip grabAnim;
-    public AnimationClip idleAnim;
+    [SerializeField] Animator handAnim;
+    [SerializeField] AnimationClip grabAnim;
+    [SerializeField] AnimationClip idleAnim;
 
-    public bool triggered = false;
-    public bool grabbing = false;
+    [SerializeField] bool triggered = false;
+    [SerializeField] bool grabbing = false;
 
-    public float normalSpeed = 0.2f;
-    public float speed = 0.2f;
-    public float verticalSpeed = 5f;
-    public float retreatSpeed = 5f;
+    [SerializeField] float normalSpeed = 0.2f;
+    [SerializeField] float speed = 0.2f;
+    [SerializeField] float verticalSpeed = 5f;
+    [SerializeField] float retreatSpeed = 5f;
 
-    public GameObject player;
+    [SerializeField] GameObject player;
     PlayerController playerController;
 
     Vector2 playerPos;
@@ -33,6 +33,7 @@ public class TheHand : MonoBehaviour
     private void Start()
     {
         startPos = transform.position;
+        speed = normalSpeed;
     }
     private void Update()
     {

@@ -24,4 +24,9 @@ public class GameManager : MonoBehaviour
 
         uiManager.OnGameOver();
     }
+
+    public void RestartThisScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
 }
